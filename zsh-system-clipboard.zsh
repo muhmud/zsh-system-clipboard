@@ -195,59 +195,46 @@ zle -N zsh-system-clipboard-vicmd-vi-put-before
 function zsh-system-clipboard-vicmd-vi-delete() {
   local region_was_active=${REGION_ACTIVE}
   zle vi-delete
-  if [[ "${KEYS}" == "d" && "${region_was_active}" == 0 ]]; then # A new line should be added to the end
-    printf '%s\n' "$CUTBUFFER" | zsh-system-clipboard-set
-  else
-    printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
-  fi
 }
 zle -N zsh-system-clipboard-vicmd-vi-delete
 
 function zsh-system-clipboard-vicmd-vi-delete-char() {
   zle vi-delete-char
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-delete-char
 
 function zsh-system-clipboard-vicmd-vi-change-eol() {
   zle vi-change-eol
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-change-eol
 
 function zsh-system-clipboard-vicmd-vi-kill-eol() {
   zle vi-kill-eol
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-kill-eol
 
 function zsh-system-clipboard-vicmd-vi-change-whole-line() {
   zle vi-change-whole-line
-  printf '%s\n' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-change-whole-line
 
 function zsh-system-clipboard-vicmd-vi-change() {
   zle vi-change
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-change
 
 function zsh-system-clipboard-vicmd-vi-substitue() {
   zle vi-substitue
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-substitue
 
 function zsh-system-clipboard-vicmd-vi-delete-char() {
   zle vi-delete-char
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-delete-char
 
 function zsh-system-clipboard-vicmd-vi-backward-delete-char() {
   zle vi-backward-delete-char
-  printf '%s' "$CUTBUFFER" | zsh-system-clipboard-set
 }
 zle -N zsh-system-clipboard-vicmd-vi-backward-delete-char
 
